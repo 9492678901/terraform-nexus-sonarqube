@@ -1,8 +1,8 @@
 resource "aws_instance" "sonanexus"{
-	ami= "ami-00c03f7f7f2ec15c3"
+	ami= "ami-02913db388613c3e1"
 	instance_type= "t2.medium"
 	user_data= "${file("nexusinstall.sh")}"
-	key_name="test"
+	key_name="abpk"
 	tags = {
     		Name = "sonanexus"
   	}
