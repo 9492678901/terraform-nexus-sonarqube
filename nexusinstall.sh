@@ -1,4 +1,9 @@
 #!bin/bash
+#install java
+wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u141-b15/336fa29ff2bb4ef291e347e091f7f4a7/jdk-8u141-linux-x64.rpm
+sudo yum install -y jdk-8u141-linux-x64.rpm
+
+#install nexus access via port 8081
 cd /opt
  #get url from sona nexus official site https://help.sonatype.com/repomanager3/download
  sudo wget https://download.sonatype.com/nexus/3/latest-unix.tar.gz
@@ -12,3 +17,10 @@ cd /opt
  sudo chkconfig --add nexus
  sudo chkconfig nexus on
  sudo service nexus start
+
+ #install sonarqube
+ cd
+ sudo wget -O /etc/yum.repos.d/sonar.repo http://downloads.sourceforge.net/project/sonar-pkg/rpm/sonar.repo
+sudo yum install sonar -y
+sudo service sonar start
+sudo chkconfig sonar on
