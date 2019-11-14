@@ -19,7 +19,7 @@ cd /opt
  sudo service nexus start
 
  #install sonarqube
- cd
+ cd /opt
  sudo wget -O /etc/yum.repos.d/sonar.repo http://downloads.sourceforge.net/project/sonar-pkg/rpm/sonar.repo
 sudo yum install sonar -y
 sudo service sonar start
